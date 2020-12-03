@@ -23,7 +23,7 @@ def create_orders(symbol, qty, side, type, time_in_force):
         "time_in_force":time_in_force
     }
     r = requests.post(ORDERS_URL, json = data, headers = HEADERS)
-
+    # reminder I need to use json more often!
     return json.loads(r.content)
 
 response = create_orders("AAPL", 100, "buy", "market", "gtc")
